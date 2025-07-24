@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Status of Zesty.io Cloud Platform</title>
+    <script type="text/javascript">
+            // force redirect to https
+             if(window.location.protocol != 'https:') {
+                location.href =   location.href.replace("http://", "https://");
+             }    
+    </script>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://status.zesty.io/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Zesty.io Platform Status Page" />
+    <meta name="twitter:title" content="Zesty.io Platform Status Page">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    <meta property="og:url" content="https://status.zesty.io/" />
+    <meta property="og:site_name" content="Zesty.io Platform Status Page" />
+    <link type="text/css" href="https://zesty-io.github.io/websites/css/bulma.min.css" rel="stylesheet" media="screen" />
+    <link rel="icon" href="https://brand.zesty.io/zesty-io-logo.png" />
+</head>
+<bodyitemscope="" itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar is-fixed-top is-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://www.zesty.io">
+                    <img class="zesty-white-logo" src="https://brand.zesty.io/zesty-io-logo-horizontal.png"
+                        alt="Logo">
+                </a>
+                <!-- 
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                -->
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-start">
+
+                    <a class="navbar-item" href="/"
+                        style="border-left: 1px rgba(255,255,255,0.2) solid; padding-left: 15px; ">
+                        <span class="fa fa-thermometer"></span> &nbsp; Platform Status
+                    </a>
+
+
+                    <span class="navbar-item is-zesty-user is-hidden">
+                        <a class="button is-outlined open-zesty-button" href="https://accounts.zesty.io">
+
+                            <small title="Open Accounts" class="has-text-normal">Open Accounts</small>
+                        </a>
+                    </span>
+
+                </div>
+
+                <div class="navbar-end">
+
+
+                    <span class="navbar-item not-zesty-user">
+                        <a class="button is-outlined" href="https://www.zesty.io/login/">
+                            <span class="icon">
+                                <i class="fa fa-sign-in"></i>
+                            </span>
+                            <small title="Login to Zesty.io" class="has-text-normal">Sign In</small>
+                        </a>
+                    </span>
+                    <span class="navbar-item not-zesty-user">
+                        <a class="button is-primary " data-area="header" href="https://www.zesty.io/login/">
+                            <span class="icon">
+                                <i class="fa fa-user-plus"></i>
+                            </span>
+                            <span title="Create Account">Create Account</span>
+                        </a>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="hero is-dark mt-6">
+        <div class="hero-body has-text-centered">
+            <div class="container">
+                <h1 id="zestyProblem" class="title has-dark-text is-hidden">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x has-text-warning"></i>
+                        <i class="fa fa-exclamation fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span>Intermittent Issues Occuring</span>
+                </h1>
+                <h1 id="zestyUp" class="title has-dark-text is-hidden">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x has-text-success"></i>
+                        <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span>Zesty.io is up and running</span>
+                </h1>
+                <h1 id="zestyCheck" class="title has-dark-text">
+                    <span>
+                        <i class="fa fa-refresh fa-spin fa-fw has-text-success" aria-hidden="true"></i>
+                    </span>
+                    <span>Checking Platform Health</span>
+                </h1>
+
+                <h2 class="subtitle has-grey-text">
+                    <p>
+                        Having trouble? Troubleshoot by emailing us at <a class="has-text-weight-semibold"
+                            href="mailto:support@zesty.io">support@zesty.io</a>.
+                    </p>
+                </h2>
+            </div>
+        </div>
+    </section>
+    <br>
+    <div class="container">
+
+        <div class="columns is-multiline">
+
+            <div class="column is-one-half">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Application Programming Interfaces (APIs)
+                        </p>
+
+                    </header>
+                    <div class="card-content">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th><abbr title="Service Name">Service</abbr></th>
+                                    <th>Status</th>
+                                    <th><abbr title="Server Response Time">Response</abbr></th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="apiServices">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-half">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            User Interfaces and Rendering Services
+                        </p>
+
+                    </header>
+                    <div class="card-content">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th><abbr title="Service Name">Service</abbr></th>
+                                    <th>Status</th>
+                                    <th><abbr title="Server Response Time">Response</abbr></th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="uiServices">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="planned" class="columns is-mobile is-multiline" style="display: none;">
+
+            <div class="column is-one-half">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Planned Maintenance
+                        </p>
+
+                    </header>
+                    <div class="card-content">
+                        <div id="planned-details">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-mobile is-multiline">
+
+            <div class="column is-one-half">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Recorded Incidents
+                        </p>
+
+                    </header>
+                    <div class="card-content">
+                        <div id="incidents">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <script type="text/javascript">
+
+        let apiServices = [
+            {
+                'id': 'accounts-api',
+                'name': 'Accounts API',
+                'description': 'User Management, Instance Creation, Permissions, etc.',
+                'health': 'https://accounts.api.zesty.io/'
+            },
+            {
+                'id': 'instances-api',
+                'name': 'Instances API',
+                'description': 'Content Management, Web Engine File Editing, Publishing, etc.',
+                'health': 'https://instances.api.zesty.io/'
+            },
+            {
+                'id': 'media-api',
+                'name': 'Media API',
+                'description': 'Media File Management, Media Modification, Media URL Resolution, &amp;  Uploading.',
+                'health': 'https://svc.zesty.io/media-manager-service/'
+            },
+            {
+                'id': 'auth-api',
+                'name': 'Auth API',
+                'description': 'User login, User Authentication, &amp; Developer Tokens',
+                'health': 'https://svc.zesty.io/auth/'
+            },
+        ]
+
+        let uiServices = [
+            {
+                'id': 'accounts-ui',
+                'name': 'Accounts UI',
+                'description': 'User interface for account management',
+                'health': 'https://accounts.zesty.io/login'
+            },
+            {
+                'id': 'manager-ui',
+                'name': 'Manager UI',
+                'description': 'User interface for content management',
+                'health': 'https://8-aaeffee09b-7w6v22.manager.zesty.io/'
+            },
+            {
+                'id': 'web-engine',
+                'name': 'Web Engine',
+                'description': 'Renders Parsleys and HTML pages',
+                'health': 'https://zdrflzfm-dev.webengine.zesty.io/__healthz__'
+            }
+        ]
+
+        let apiTableBody = document.querySelector(`#apiServices`)
+        let uiTableBody = document.querySelector(`#uiServices`)
+
+        let totalServices = apiServices.length + uiServices.length
+        let totalUpServices = 0
+        let totalDownServices = 0
+
+        // build ui for API table
+        apiServices.map(svc => {
+            apiTableBody.innerHTML += buildRow(svc)
+        })
+        // build ui for UI table
+        uiServices.map(svc => {
+            uiTableBody.innerHTML += buildRow(svc)
+        })
+
+        let servicesToTest = apiServices.concat(uiServices)
+        // check health endpoints for api
+        servicesToTest.map(async svc => {
+            let startTime = (new Date()).getTime(), endTime;
+            let row = document.querySelector(`#${svc.id}`)
+            await fetch(svc.health, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+                .then(response => {
+                    endTime = (new Date()).getTime();
+                    document.querySelector(`#${svc.id} td i.status-checking`).classList.add('is-hidden')
+                    document.querySelector(`#${svc.id} td i.status-success`).classList.remove('is-hidden')
+                    document.querySelector(`#${svc.id} td.ms`).innerHTML = (endTime - startTime) + 'ms'
+                    totalUpServices++
+                })
+                .catch(error => {
+                    document.querySelector(`#${svc.id} td i.status-checking`).classList.add('is-hidden')
+                    document.querySelector(`#${svc.id} td i.status-problem`).classList.remove('is-hidden')
+                    document.querySelector(`#${svc.id} td.ms`).innerHTML = 'none'
+                    totalDownServices++
+                });
+            if (servicesToTest.length == totalUpServices) {
+                document.querySelector(`#zestyCheck`).classList.add('is-hidden')
+                document.querySelector(`#zestyUp`).classList.remove('is-hidden')
+            }
+            if (totalDownServices > 0) {
+                document.querySelector(`#zestyCheck`).classList.add('is-hidden')
+                document.querySelector(`#zestyProblem`).classList.remove('is-hidden')
+                document.querySelector(`#zestyUp`).classList.add('is-hidden')
+            }
+        })
+
+
+        function buildRow(svc) {
+            return `<tr id="${svc.id}">
+                            <th class="name">${svc.name}</th>
+                            <td class="status has-text-centered">
+                                <i class="status-checking fa fa-refresh fa-spin fa-fw has-text-grey-light" aria-hidden="true"></i>
+                                <i class="status-success fa fa-check has-text-success is-hidden" aria-hidden="true"></i>
+                                <i class="status-problem fa fa-exclamation-circle has-text-warning is-hidden" aria-hidden="true"></i>
+                                <span class="sr-only">Pinging ${svc.name} Service for Uptime...</span>
+                            </td>
+                            <td class="ms">?</td>
+                            <td class="description">${svc.description}</td>
+                        </tr>`
+        }
+
+        function buildIncident(incident) {
+            return `
+                <div class="content">
+                        <div>
+                            <strong>
+                                <time datetime="${incident.time_started}">${incident.time_started}</time>
+                                <i class="fa fa-circle" aria-hidden="true" style="color: ${incident.status_color} !important"></i>
+                            </strong> 
+                            <strong class="is-pulled-right has-text-grey">${incident.service}</strong>
+                        </div>
+                        ${incident.description}
+               
+                    </div>
+                    <hr>
+                `
+        }
+
+
+        async function populateIncidents() {
+            let ep = `https://command.zesty.io/-/instant/6-fcd98bbad5-9vflb8.json`
+            try {
+                const response = await fetch(ep);
+                const result = await response.json();
+                result.data.reverse().map(content => {
+                    document.querySelector(`#incidents`).innerHTML += buildIncident(content.content)
+                })
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        populateIncidents();
+
+        function buildPlannedItem(item) {
+            return `
+                <div class="content">
+                        <div>
+                            <strong>
+                                <time datetime="${item.start_time}">${item.start_time} (PST)</time>
+                                <strong class="is-pulled-right has-text-grey">Duration (Hours): ${item.duration}</strong>
+                            </strong>
+                        </div>
+                        <p>${item.description}</p>
+                    </div>
+                    <hr>
+                `
+        }
+
+        async function populatePlannedItems() {
+            let ep = `https://command.zesty.io/-/instant/6-9ceae68194-5b7pm7.json`
+            try {
+                const response = await fetch(ep);
+                const result = await response.json();
+
+                if (result.data.length > 0) {
+                    document.getElementById('planned').style.display = "block";
+                }
+
+                result.data.map(content => {
+                    document.querySelector(`#planned-details`).innerHTML += buildPlannedItem(content.content)
+                })
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        populatePlannedItems();
+
+    </script>
+
+    </body>
+
+</html>
