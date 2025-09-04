@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: post
+title: First Report Post
+
 ---
 
 ## Recorded Incident
