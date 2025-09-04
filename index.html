@@ -170,7 +170,7 @@ layout: default
     <li>
       <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
       {{ post.excerpt }}
-      <a href="{{ post.url | relative_url }}">Read more...</a>
+      <a href="{{ post.url | relative_url }}">Read more...</a> <hr/>
     </li>
   {% endfor %}
 </ul>
@@ -295,6 +295,7 @@ layout: default
     </body>
 
 </html>
+
 
 
 
