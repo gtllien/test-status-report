@@ -30,7 +30,7 @@ layout: default
 </head>
 <bodyitemscope="" itemtype="https://schema.org/WebPage">
 
-    <nav class="navbar is-fixed-top is-white">
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="https://www.zesty.io">
@@ -88,41 +88,6 @@ layout: default
         </div>
     </nav>
 
-
-    <section class="hero is-dark mt-6">
-        <div class="hero-body has-text-centered">
-            <div class="container">
-                <h1 id="zestyProblem" class="title has-dark-text is-hidden">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x has-text-warning"></i>
-                        <i class="fa fa-exclamation fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span>Intermittent Issues Occuring</span>
-                </h1>
-                <h1 id="zestyUp" class="title has-dark-text is-hidden">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x has-text-success"></i>
-                        <i class="fa fa-check fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span>Zesty.io is up and running</span>
-                </h1>
-                <h1 id="zestyCheck" class="title has-dark-text">
-                    <span>
-                        <i class="fa fa-refresh fa-spin fa-fw has-text-success" aria-hidden="true"></i>
-                    </span>
-                    <span>Checking Platform Health</span>
-                </h1>
-
-                <h2 class="subtitle has-grey-text">
-                    <p>
-                        Having trouble? Troubleshoot by emailing us at <a class="has-text-weight-semibold"
-                            href="mailto:support@zesty.io">support@zesty.io</a>.
-                    </p>
-                </h2>
-            </div>
-        </div>
-    </section>
-    <br>
     <div class="container">
 
         <div class="columns is-multiline">
@@ -198,12 +163,11 @@ layout: default
             </div>
         </div>
 
-<h1>TEST INCIDENT REPORT Update</h1>
+<h1>Recorded Incident(s)</h1>
 
 <ul class="post-list">
   {% for post in site.posts %}
     <li>
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
       {{ post.excerpt }}
       <a href="{{ post.url | relative_url }}">Read more...</a>
@@ -211,12 +175,10 @@ layout: default
   {% endfor %}
 </ul>
 
-
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <script type="text/javascript">
-
         let apiServices = [
             {
                 'id': 'accounts-api',
@@ -314,7 +276,6 @@ layout: default
             }
         })
 
-
         function buildRow(svc) {
             return `<tr id="${svc.id}">
                             <th class="name">${svc.name}</th>
@@ -329,79 +290,12 @@ layout: default
                         </tr>`
         }
 
-        function buildIncident(incident) {
-            return `
-                <div class="content">
-                        <div>
-                            <strong>
-                                <time datetime="${incident.time_started}">${incident.time_started}</time>
-                                <i class="fa fa-circle" aria-hidden="true" style="color: ${incident.status_color} !important"></i>
-                            </strong> 
-                            <strong class="is-pulled-right has-text-grey">${incident.service}</strong>
-                        </div>
-                        ${incident.description}
-               
-                    </div>
-                    <hr>
-                `
-        }
-
-
-        async function populateIncidents() {
-            let ep = `https://command.zesty.io/-/instant/6-fcd98bbad5-9vflb8.json`
-            try {
-                const response = await fetch(ep);
-                const result = await response.json();
-                result.data.reverse().map(content => {
-                    document.querySelector(`#incidents`).innerHTML += buildIncident(content.content)
-                })
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-
-        populateIncidents();
-
-        function buildPlannedItem(item) {
-            return `
-                <div class="content">
-                        <div>
-                            <strong>
-                                <time datetime="${item.start_time}">${item.start_time} (PST)</time>
-                                <strong class="is-pulled-right has-text-grey">Duration (Hours): ${item.duration}</strong>
-                            </strong>
-                        </div>
-                        <p>${item.description}</p>
-                    </div>
-                    <hr>
-                `
-        }
-
-        async function populatePlannedItems() {
-            let ep = `https://command.zesty.io/-/instant/6-9ceae68194-5b7pm7.json`
-            try {
-                const response = await fetch(ep);
-                const result = await response.json();
-
-                if (result.data.length > 0) {
-                    document.getElementById('planned').style.display = "block";
-                }
-
-                result.data.map(content => {
-                    document.querySelector(`#planned-details`).innerHTML += buildPlannedItem(content.content)
-                })
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-
-        populatePlannedItems();
-
     </script>
 
     </body>
 
 </html>
+
 
 
 
