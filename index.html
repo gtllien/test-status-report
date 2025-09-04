@@ -198,27 +198,18 @@ layout: default
             </div>
         </div>
 
-        <div class="columns is-mobile is-multiline">
+<h1>TEST INCIDENT REPORT Update</h1>
 
-            <div class="column is-one-half">
-                <div class="card">
-                    <header class="card-header">
-                        <p class="card-header-title">
-                            Recorded Incident(s)
-                        </p>
-
-                    </header>
-                    <div class="card-content">
-                        <div id="incidents">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+      {{ post.excerpt }}
+      <a href="{{ post.url | relative_url }}">Read more...</a>
+    </li>
+  {% endfor %}
+</ul>
 
 
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
@@ -411,5 +402,6 @@ layout: default
     </body>
 
 </html>
+
 
 
