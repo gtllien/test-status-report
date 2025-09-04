@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: post
+title: test incident report1
+
 ---
 
 ## Recorded Incident
