@@ -169,7 +169,7 @@ layout: default
   {% for post in site.posts %}
     <li>
       <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-      {{ post.excerpt }}
+      {{ post.content }}
       <a href="{{ post.url | relative_url }}">Read more...</a> <hr/>
     </li>
   {% endfor %}
@@ -295,6 +295,7 @@ layout: default
     </body>
 
 </html>
+
 
 
 
