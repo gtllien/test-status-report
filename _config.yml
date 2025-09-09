@@ -1,9 +1,4 @@
 theme: jekyll-theme-cayman
 title: Test Status Report Page
 description: A Zesty status report test page
-defaults:
-  - scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts" # applies this default to all posts
-    values:
-      layout: "post"
+baseurl: ""
