@@ -1,0 +1,31 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Your custom styles for posts
+// These will override the theme's defaults
+
+/* Styles for the main post content area */
+.post-content {
+  /* This centers the content and sets a max-width for readability */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styles for paragraphs within the post content */
+.post-content p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+/* Styles for images within the post content */
+.post-content img {
+  max-width: 100%; /* Makes images responsive */
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+}
