@@ -166,11 +166,11 @@ layout: default
 <h1>Recorded Incident(s)</h1>
 
 <ul class="post-list">
-  {% for post in site.incidents %}
+  {% for incident in site.incidents %}
     <li>
-      <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-      {{ post.content }}
-      <a href="{{ post.url | relative_url }}">Read more...</a> <hr/>
+      <p class="post-meta">{{ incident.date | date: "%b %-d, %Y" }}</p>
+      {{ incident.content }}
+      <a href="{{ incident.url | relative_url }}">Read more...</a> <hr/>
     </li>
   {% endfor %}
 </ul>
@@ -295,6 +295,7 @@ layout: default
     </body>
 
 </html>
+
 
 
 
