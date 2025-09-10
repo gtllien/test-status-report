@@ -166,7 +166,7 @@ layout: default
 <h1>Recorded Incident(s)</h1>
 
 <ul class="post-list">
-  {% for post in site.posts %}
+  {% for post in site.incidents %}
     <li>
       <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
       {{ post.content }}
@@ -295,6 +295,7 @@ layout: default
     </body>
 
 </html>
+
 
 
 
