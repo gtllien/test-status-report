@@ -2,7 +2,7 @@ theme: jekyll-theme-cayman
 title: Test Status Report Page
 description: A Zesty status report test page
 collections:
-incidents:
-output: true
-permalink: /incidents/:title/
+  incidents:
+    output: true
+    permalink: /incidents/:title/
 
