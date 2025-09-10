@@ -1,6 +1,7 @@
 ---
 layout: default
-title: test incident0
+title: test incidentxx
+collection: _incidents
 
 ---
 
