@@ -31,10 +31,26 @@
       <p>Posted on {{ page.date | date: "%B %d, %Y" }}</p>
       {{ content }}
       <br/>
-      <a href="javascript:void(0)" onclick="window.history.back()">
-      ← Back
-      </a>
       
+    <!-- The button container is initially hidden -->
+    <div class="back-button-container" style="display: none;">
+        <a href="javascript:void(0)" onclick="window.history.back()" class="back-button">
+            ← Back
+        </a>
+    </div>
+
+    <script>
+      // This script checks the browser's history length.
+      // If the length is greater than 1, it means there is a previous page to go back to.
+      if (window.history.length > 1) {
+        const backButtonContainer = document.querySelector('.back-button-container');
+        if (backButtonContainer) {
+          // If a previous page exists, show the button.
+          backButtonContainer.style.display = 'block';
+        }
+      }
+    </script>
+    <!-- END OF BACK BUTTON -->    
       <footer class="site-footer">
         {% if site.github.is_project_page %}
           <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
