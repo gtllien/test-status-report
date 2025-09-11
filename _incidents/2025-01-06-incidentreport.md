@@ -1,7 +1,9 @@
 ---
-layout: default
-title: test incident1
+layout: post
+title: Intermittent Service Disruption
+date: 2025-01-06
 collection: incidents
+tags: [incident, outage, report, critical]
 
 ---
 
