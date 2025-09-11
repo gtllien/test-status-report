@@ -1,6 +1,7 @@
 ---
-layout: default
-title: test incident2
+layout: post
+title: Incident Report title
+date: 2025-08-25 
 collection: incidents
 
 ---
