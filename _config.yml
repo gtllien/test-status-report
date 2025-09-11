@@ -1,6 +1,7 @@
-theme: jekyll-theme-cayman
 title: Test Status Report Page
 description: A Zesty status report test page
+google_analytics: 
+theme: jekyll-theme-cayman
 collections:
   incidents:
     output: true
