@@ -31,8 +31,8 @@ Refer to the below example template.
 
 ```yaml
 ---
-layout: post
-title: "Incident Report: Database Outage"
+layout: default
+title: Platform Outage
 date: 2025-09-11 10:30:00 -0700
 collection: incidents
 tags: [incident, outage, database, report, critical]
@@ -54,11 +54,13 @@ tags: [incident, outage, database, report, critical]
 ### Step 4: Write the Incident Report Content
 
 The content should be in markdown format. You can use standard markdown syntax for headings, lists, bold text, code blocks, and more.
-See below example incident content:
+
+**Example Incident report:**
 
 > A critical security vulnerability was discovered in our authentication system on September 10, 2025. This vulnerability could have allowed unauthorized access to user accounts.
 >
 > Our team successfully patched the vulnerability within 2 hours of its discovery, and no user data was compromised.
 > A full report will be provided once ready.
+
 
 
