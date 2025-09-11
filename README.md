@@ -31,7 +31,7 @@ Refer to the below example template.
 
 ```yaml
 ---
-layout: default
+layout: post
 title: Platform Outage
 date: 2025-09-11 10:30:00 -0700
 collection: incidents
@@ -41,7 +41,7 @@ tags: [incident, outage, database, report, critical]
 ```
 **Field Description:**
 
-* `layout`: Specifies the Liquid template to use for rendering the page. We are using the `default` layout.
+* `layout`: Specifies the Liquid template to use for rendering the page. Use the value `post` for the page layout.
 
 * `title`: The title of the incident report. This is what will be displayed on the page.
 
@@ -61,6 +61,7 @@ The content should be in markdown format. You can use standard markdown syntax f
 >
 > Our team successfully patched the vulnerability within 2 hours of its discovery, and no user data was compromised.
 > A full report will be provided once ready.
+
 
 
 
