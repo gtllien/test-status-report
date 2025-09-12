@@ -6,3 +6,6 @@
 // Your custom styles for posts
 // These will override the theme's defaults
 
+.page-header {
+    background-color: #050a30;
+    background-image: linear-gradient(120deg, #1b202c, #050a30);
