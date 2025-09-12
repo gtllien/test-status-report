@@ -1,9 +1,0 @@
----
----
-
-@import "{{ site.theme }}";
-
-.page-header {
-    background-color: #000c66;
-    background-image: linear-gradient(120deg, #1b202c, #000c66);
-}
