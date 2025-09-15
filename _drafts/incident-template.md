@@ -6,7 +6,8 @@ collection: incidents
 tags:
 ---
 
-# Your Post Title
+Write your incident report content here in mardown format. 
 
-Write your incident report content in md format. 
-**Note:** Make sure to update the front matter above.
+**Important Note:** 
+* Make sure to update the front matter above.
+* Follow the Jekyll post naming convention: `YYYY-MM-DD-your-post-title.md`.
