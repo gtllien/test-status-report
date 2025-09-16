@@ -1,11 +1,18 @@
 ## Status.zesty.io
 
-Simple html file that requests our service health endpoints to gives user feedback. Simple javascript, and uses CSS from extensions.zesty.io
+ This is Zesty.io platform's status report page hosted on GitHub Pages using a Jekyll theme. 
+ 
+ The page's HTML dynamically checks the status of our services by making requests to their respective health endpoints.
 
-Files are stored in a google cloud bucket:
-https://console.cloud.google.com/storage/browser/status.zesty.io?project=zesty-prod
-
-DNS managed on cloudflare with HTTPS on to SSL on the cloud bucket.
+| Service      | Health Endpoint |
+|:-------------|:------------------|
+| Accounts API | https://accounts.api.zesty.io/ |
+| Instances API | https://instances.api.zesty.io/ |
+| Media API | https://svc.zesty.io/media-manager-service/ |
+| Auth API | https://svc.zesty.io/auth/ |
+| Accounts UI | https://accounts.zesty.io/login |
+| Manager UI | https://8-aaeffee09b-7w6v22.manager.zesty.io/ |
+| WebEngine | https://zdrflzfm-dev.webengine.zesty.io/__healthz__ |
 
 ## Creating an Incident Report
 
@@ -61,6 +68,7 @@ The content should be in markdown format. You can use standard markdown syntax f
 >
 > Our team successfully patched the vulnerability within 2 hours of its discovery, and no user data was compromised.
 > A full report will be provided once ready.
+
 
 
 
