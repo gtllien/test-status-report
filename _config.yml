@@ -5,5 +5,5 @@ theme: jekyll-theme-cayman
 collections:
   incidents:
     output: true
-    permalink: /incidents/:title/
+    permalink: /incidents/:year:month:day:hour:minute:second/
 
