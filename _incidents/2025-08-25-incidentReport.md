@@ -1,6 +1,5 @@
 ---
 layout: post
-title: 
 date: 2025-08-25 
 collection: incidents
 
