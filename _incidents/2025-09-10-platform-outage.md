@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Platform Outage
 date: 2025-09-11 10:30:00 -0700
 collection: incidents
-tags: [incident, outage, database, report, critical]
+tags: [GCP]
 
 ---
 
