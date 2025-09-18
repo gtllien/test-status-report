@@ -42,7 +42,7 @@ layout: post
 title: Platform Outage
 date: 2025-09-11 10:30:00 -0700
 collection: incidents
-tags: [incident, outage, database, report, critical]
+tags: [WebEngine]
 ---
 
 ```
@@ -50,13 +50,21 @@ tags: [incident, outage, database, report, critical]
 
 * `layout`: Specifies the Liquid template to use for rendering the page. Use the value `post` for the page layout.
 
-* `title`: The title of the incident report. This is what will be displayed on the page.
+* `title`: The title of the incident report. This is what will be displayed on the page. If title is not added, it will default to the site's page title.
 
 * `date`: The date and time the report is created. The format is `YYYY-MM-DD HH:MM:SS +/-TTTT`. The time zone offset (`-0700` in the example) is optional but recommended.
 
 * `collection`: The name of the directory in which the reports are stored. Use the value `incidents`
 
-* `tags`: A list of keywords related to the post. Useful for searchability and creating related content links. 
+* `tags`: A list of keywords related to the post. Useful for searchability and creating related content links. The value should be the service(s) affected. Please refer to the below list of pre-defined tags to use (should be case-sensitive).
+  - AccountsAPI
+  - InstancesAPI
+  - MediaAPI
+  - AuthAPI
+  - AccountsUI
+  - ManagerUI
+  - WebEngine
+  - GCP
 
 ### Step 4: Write the Incident Report Content
 
@@ -68,6 +76,7 @@ The content should be in markdown format. You can use standard markdown syntax f
 >
 > Our team successfully patched the vulnerability within 2 hours of its discovery, and no user data was compromised.
 > A full report will be provided once ready.
+
 
 
 
