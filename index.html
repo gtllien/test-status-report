@@ -136,11 +136,12 @@ layout: default
 <h1>Recorded Incident(s)</h1>
 
 <ul class="post-list">
-  {% for incident in site.incidents %}
+  {% assign sorted_incidents = site.incidents | sort: 'date' | reverse %}
+  {% for incident in sorted_incidents %}
     <li>
       <b><p class="post-meta">{{ incident.date | date: "%b %-d, %Y" }}</p></b>
       {{ incident.excerpt }}
-      <a href="{{ incident.url | relative_url }}">View report</a> <hr/>
+      <a href="{{ incident.url | relative_url }}">View Full Report</a> <hr/>
     </li>
   {% endfor %}
 </ul>
@@ -266,6 +267,7 @@ layout: default
     </body>
 
 </html>
+
 
 
 
