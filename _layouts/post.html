@@ -16,9 +16,17 @@
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">
-      {{ page.title | default: page.path | split: '/' | last | remove: '.md' | remove: '.markdown' | replace: '-', '/' | capitalize }}
-      </h1>
+      {% assign post_title = page.title %}
+      {% unless post_title %}
+        {% assign parts = page.path | split: '/' | last | remove: '.md' | split: '-' %}
+  
+        {% assign date_part = parts | slice: 0, 3 | join: '-' %}
+        {% assign text_part = parts | slice: 3, parts.size | join: ' ' | capitalize %}
+
+        {% assign post_title = date_part | append: ' ' | append: text_part %}
+      {% endunless %}
+
+      <h1 class="project-name">{{ post_title }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.github.project_tagline }}</h2>
      
     </header>
