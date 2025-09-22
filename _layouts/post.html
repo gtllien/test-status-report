@@ -17,7 +17,7 @@
 
     <header class="page-header" role="banner">
       <h1 class="project-name">
-      {{ page.title | default: page.name | default: site.title }}
+      {{ page.title | default: page.path | default: page.name | default: site.title }}
       </h1>
       <h2 class="project-tagline">{{ page.description | default: site.github.project_tagline }}</h2>
      
