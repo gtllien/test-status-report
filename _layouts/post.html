@@ -16,9 +16,16 @@
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | page.path | split: '/' | last | remove: '.md' | remove_first: page.date | replace: '-', ' ' }}</h1>
 
-     
+      {% if page.title %}
+        {% assign post_title = page.title %}
+      {% else %}
+        {% assign filename = page.path | split: '/' | last %}
+        {% assign date_prefix = page.date | date: "%Y-%m-%d-" %}
+        {% assign post_title = filename | remove: '.md' | remove_first: date_prefix | replace: '-', ' ' %}
+      {% endif %}
+
+      <h1 class="project-name">{{ post_title }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.github.project_tagline }}</h2>
      
     </header>
