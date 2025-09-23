@@ -140,7 +140,7 @@ layout: default
   {% for incident in sorted_incidents %}
     <li>
       <b><p class="post-meta">{{ incident.date | date: "%b %-d, %Y" }}</p></b>
-      {{ incident.excerpt }}
+      {{ incident.content | strip_html | truncatewords: 10 }}
       <a href="{{ incident.url | relative_url }}">View Full Report</a> <hr/>
     </li>
   {% endfor %}
@@ -267,6 +267,7 @@ layout: default
     </body>
 
 </html>
+
 
 
 
