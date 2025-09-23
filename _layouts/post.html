@@ -22,9 +22,12 @@
 {% else %}
   {% assign filename = page.path | split: '/' | last %}
   {% assign filename_no_ext = filename | remove: '.md' %}
-  {% assign title_parts = filename_no_ext | split: '-' %}
-  {% assign title_text_parts = title_parts | drop: 3 %}
-  {% assign post_title = title_text_parts | join: ' ' %}
+  {% assign all_parts = filename_no_ext | split: '-' %}
+  {% assign date_parts = all_parts | slice: 0, 3 %}
+  {% assign date_prefix = date_parts | join: '-' %}
+  {% assign title_text_parts = all_parts | drop: 3 %}
+  {% assign title_text = title_text_parts | join: ' ' %}
+  {% assign post_title = date_prefix | append: ' ' | append: title_text %}
 {% endif %}
 
       <h1 class="project-name">{{ post_title | capitalize }}</h1>
