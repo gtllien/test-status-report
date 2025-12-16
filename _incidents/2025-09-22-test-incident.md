@@ -7,4 +7,4 @@ tags:
 
 ---
 
-TEST Incident report details here. [test Report here](/assets/reports/11_07_25 - Incident Report - Origin Redirects.pdf)
+TEST Incident report details here. [test Report here](/assets/reports/11_07_25_IncidentReport_OriginRedirects.pdf)
